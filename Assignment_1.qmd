@@ -1,0 +1,43 @@
+---
+title: "Assignment_1"
+author: "Pierre-Olivier Couture"
+format: html
+editor: visual
+---
+
+## Comment
+
+This is all my code and explanation for Assignment 1 in PSYR 6003 Fundamental of Applied Stats (Winter).
+
+## Question 1: Begin by cloning the repo for the assignment that contains the dataset. Once you have the data, import it in any way you wish and inspect the dataset for any missing or unusual values
+
+This is the code I will use to import the data from "https://github.com/iyakoven/PSYR6003-Assignment-1" to RStudio.
+
+```{r}
+#| label: Installing and loading in all packages
+# This is the code for installing all the libraries I require for this code and then once it is installed, I call it back (make sure R knows to use it) 
+
+installed.packages("tidyverse")
+library(tidyverse)
+library(readr)
+
+```
+
+```{r}
+#| label: Load in the Data
+# This is the code for loading in the "avengers.csv' file from GitHub to my RStudio. 
+
+avengers <- read_csv("avengers.csv")
+
+```
+
+
+## Question 2a) Subset the data to include only complete, clean cases
+
+```{r}
+#| label: Removing Incomplete Cases
+# This is the code I used for removing cases with incomplete data. Essentially, this will take any empty cells and convert them to "NA". This way, when running analyses later, I will be able to get R to not use any cells containing "NA" and will allow me to obtain numerical results despite their being characters in some of the cells. 
+
+```
+
+The `echo: false` option disables the printing of code (only output is displayed).
