@@ -109,14 +109,10 @@ range(avengers$injuries, na.rm = TRUE)
 
 ```
 
-## Question 3d) 
+## Question 3d)
 
 ```{r}
 
 ```
-
-
-
-
 
 The `echo: false` option disables the printing of code (only output is displayed).
