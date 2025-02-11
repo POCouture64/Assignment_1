@@ -9,9 +9,7 @@ editor: visual
 
 This is all my code and explanation for Assignment 1 in PSYR 6003 Fundamental of Applied Stats (Winter).
 
-## Question 1: Begin by cloning the repo for the assignment that contains the dataset. Once you have the data, import it in any way you wish and inspect the dataset for any missing or unusual values
-
-This is the code I will use to import the data from "https://github.com/iyakoven/PSYR6003-Assignment-1" to RStudio.
+## Question 1: Install all required packages and load in the data set
 
 ```{r}
 #| label: Installing and loading in all packages
@@ -61,7 +59,7 @@ avengers_SPSS <- avengers %>%
 
 # The following code will save the code for to an SPSS format
 
-write_sav(avengers_SPSS, "avengers_no_super_dead")
+write_sav(avengers_SPSS, "avengers_no_super_dead.SPSS")
 
 ```
 
@@ -84,35 +82,43 @@ write_csv(avengers_CSV, "avengers_no_super_dead.csv")
 ## Question 3c) Summarize the dataset
 
 ```{r}
-#| label: Summarizing the data
+#| label: Summarizing the data for Combat Effectiveness
 # This is the code I will use to understand the properties of combat 
-# effectiveness, kills, and injuries. This will present the mean, sd, and range
-# values for those variables.
+# effectiveness, kills, and injuries. This will present the mean, sd,  # and range values for those variables.
 
 # This is the code for 'CombatEffectiveness' 
-
 summarise(avengers,avg_CombatEffectiveness = mean(CombatEffectiveness,na.rm=TRUE))
 summarise(avengers,sd_CombatEffectiveness = sd(CombatEffectiveness,na.rm=TRUE))
 range(avengers$CombatEffectiveness, na.rm = TRUE)
 
-# This is the code for 'kills'
+```
+```{r}
+#| label: Summarizing the data for kills
 
+# This is the code for 'kills'
 summarise(avengers,avg_kills = mean(kills,na.rm=TRUE))
 summarise(avengers,sd_kills = sd(kills,na.rm=TRUE))
 range(avengers$kills, na.rm = TRUE)
+```
+```{r}
+#| label: Summarizing the data for injuries
 
 # This is the code for 'injuries'
-
 summarise(avengers,avg_injuries = mean(injuries,na.rm=TRUE))
 summarise(avengers,sd_injuries = sd(injuries,na.rm=TRUE))
 range(avengers$injuries, na.rm = TRUE)
-
 ```
 
+<<<<<<< HEAD
 ## Question 3d)
 
 ```{r}
 
 ```
+=======
+
+
+
+>>>>>>> d96faf930bdcc5aacb227a9dbf8c5f6574e56cff
 
 The `echo: false` option disables the printing of code (only output is displayed).
