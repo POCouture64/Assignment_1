@@ -9,9 +9,7 @@ editor: visual
 
 This is all my code and explanation for Assignment 1 in PSYR 6003 Fundamental of Applied Stats (Winter).
 
-## Question 1: Begin by cloning the repo for the assignment that contains the dataset. Once you have the data, import it in any way you wish and inspect the dataset for any missing or unusual values
-
-This is the code I will use to import the data from "https://github.com/iyakoven/PSYR6003-Assignment-1" to RStudio.
+## Question 1: Install all required packages and load in the data set
 
 ```{r}
 #| label: Installing and loading in all packages
