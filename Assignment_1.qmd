@@ -92,7 +92,6 @@ summarise(avengers,sd_CombatEffectiveness = sd(CombatEffectiveness,na.rm=TRUE))
 range(avengers$CombatEffectiveness, na.rm = TRUE)
 
 ```
-
 ```{r}
 #| label: Summarizing the data for kills
 
@@ -101,8 +100,6 @@ summarise(avengers,avg_kills = mean(kills,na.rm=TRUE))
 summarise(avengers,sd_kills = sd(kills,na.rm=TRUE))
 range(avengers$kills, na.rm = TRUE)
 ```
-
-
 ```{r}
 #| label: Summarizing the data for injuries
 
@@ -111,6 +108,9 @@ summarise(avengers,avg_injuries = mean(injuries,na.rm=TRUE))
 summarise(avengers,sd_injuries = sd(injuries,na.rm=TRUE))
 range(avengers$injuries, na.rm = TRUE)
 ```
+
+
+
 
 
 The `echo: false` option disables the printing of code (only output is displayed).
