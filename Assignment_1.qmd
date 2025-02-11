@@ -59,7 +59,7 @@ avengers_SPSS <- avengers %>%
 
 # The following code will save the code for to an SPSS format
 
-write_sav(avengers_SPSS, "avengers_no_super_dead")
+write_sav(avengers_SPSS, "avengers_no_super_dead.SPSS")
 
 ```
 
