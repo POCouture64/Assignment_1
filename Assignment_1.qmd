@@ -113,7 +113,7 @@ summarise(avengers,sd_injuries = sd(injuries,na.rm=TRUE))
 range(avengers$injuries, na.rm = TRUE)
 ```
 
-<<<<<<< HEAD
+
 ## Question 3d)
 
 ```{r}
@@ -123,6 +123,6 @@ range(avengers$injuries, na.rm = TRUE)
 
 
 
->>>>>>> d96faf930bdcc5aacb227a9dbf8c5f6574e56cff
+
 
 The `echo: false` option disables the printing of code (only output is displayed).
