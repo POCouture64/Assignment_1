@@ -20,6 +20,7 @@ This is the code I will use to import the data from "https://github.com/iyakoven
 installed.packages("tidyverse")
 library(tidyverse)
 library(readr)
+library(haven)
 
 ```
 
@@ -48,11 +49,47 @@ avengers <- avengers %>%
 print(avengers)
 
 ```
-##
+## Question 3a) Making an SPSS copy
 
 ```{r}
-#| label: 
+#| label: SPSS copy
+# This is the code I used to make a copy of the dataset in an SPSS format but it
+# will only include the avengers who did not have a superpower and have died. 
+
+avengers_SPSS <- avengers %>%
+  filter(superpower == FALSE, died == "Yes")
+
+# The following code will save the code for to an SPSS format
+
+write_sav(avengers_SPSS, "avengers_no_super_dead")
+
 ```
+
+## Question 3b) Making a csv copy
+
+```{r}
+#| label: CSV copy
+# This is the code I used to make a copy of the dataset in a CSV format but it
+# will only include the avengers who did not have a superpower and have died.
+
+avengers_CSV <- avengers %>%
+  filter(superpower == FALSE, died == "Yes")
+
+# The following code will save the code for to a CSV format
+
+write_csv(avengers_CSV, "avengers_no_super_dead.csv")
+
+```
+
+## Question 3c) Summarize the dataset
+
+```{r}
+#| label: Summarizing the data
+# 
+
+
+```
+
 
 
 
