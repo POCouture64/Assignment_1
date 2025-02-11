@@ -32,12 +32,29 @@ avengers <- read_csv("avengers.csv")
 ```
 
 
-## Question 2a) Subset the data to include only complete, clean cases
+## Question 2: Creating a new variable called 'CombatEffectiveness'
 
 ```{r}
-#| label: Removing Incomplete Cases
-# This is the code I used for removing cases with incomplete data. Essentially, this will take any empty cells and convert them to "NA". This way, when running analyses later, I will be able to get R to not use any cells containing "NA" and will allow me to obtain numerical results despite their being characters in some of the cells. 
+#| label: Creating CombatEffectiveness
+# This is the code I used for to sum the columns of speed, agility, strength
+# and willpower into a new variable called 'CombatEffectiveness.' While doing 
+# this I will also only include complete, clean cases and not count incomplete
+# responses. Directly below it I will print the results to make sure the code 
+# worked correctly.
+
+avengers <- avengers %>%
+  mutate(CombatEffectiveness = rowSums(across(c(speed, agility, strength, willpower)), na.rm = TRUE))
+
+print(avengers)
 
 ```
+##
+
+```{r}
+#| label: 
+```
+
+
+
 
 The `echo: false` option disables the printing of code (only output is displayed).
