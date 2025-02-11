@@ -32,7 +32,6 @@ avengers <- read_csv("avengers.csv")
 
 ```
 
-
 ## Question 2: Creating a new variable called 'CombatEffectiveness'
 
 ```{r}
@@ -49,6 +48,7 @@ avengers <- avengers %>%
 print(avengers)
 
 ```
+
 ## Question 3a) Making an SPSS copy
 
 ```{r}
@@ -85,13 +85,28 @@ write_csv(avengers_CSV, "avengers_no_super_dead.csv")
 
 ```{r}
 #| label: Summarizing the data
-# 
+# This is the code I will use to understand the properties of combat 
+# effectiveness, kills, and injuries. This will present the mean, sd, and range
+# values for those variables.
 
+# This is the code for 'CombatEffectiveness' 
+
+summarise(avengers,avg_CombatEffectiveness = mean(CombatEffectiveness,na.rm=TRUE))
+summarise(avengers,sd_CombatEffectiveness = sd(CombatEffectiveness,na.rm=TRUE))
+range(avengers$CombatEffectiveness, na.rm = TRUE)
+
+# This is the code for 'kills'
+
+summarise(avengers,avg_kills = mean(kills,na.rm=TRUE))
+summarise(avengers,sd_kills = sd(kills,na.rm=TRUE))
+range(avengers$kills, na.rm = TRUE)
+
+# This is the code for 'injuries'
+
+summarise(avengers,avg_injuries = mean(injuries,na.rm=TRUE))
+summarise(avengers,sd_injuries = sd(injuries,na.rm=TRUE))
+range(avengers$injuries, na.rm = TRUE)
 
 ```
-
-
-
-
 
 The `echo: false` option disables the printing of code (only output is displayed).
