@@ -92,6 +92,8 @@ summarise(avengers,sd_CombatEffectiveness = sd(CombatEffectiveness,na.rm=TRUE))
 range(avengers$CombatEffectiveness, na.rm = TRUE)
 
 ```
+
+
 ```{r}
 #| label: Summarizing the data for kills
 
@@ -100,6 +102,8 @@ summarise(avengers,avg_kills = mean(kills,na.rm=TRUE))
 summarise(avengers,sd_kills = sd(kills,na.rm=TRUE))
 range(avengers$kills, na.rm = TRUE)
 ```
+
+
 ```{r}
 #| label: Summarizing the data for injuries
 
