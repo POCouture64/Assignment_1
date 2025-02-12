@@ -17,10 +17,12 @@ This is all my code and explanation for Assignment 1 in PSYR 6003 Fundamental of
 
 installed.packages("tidyverse")
 install.packages("pwr")
+install.packages("TOSTER")
 library(tidyverse)
 library(readr)
 library(haven)
 library(pwr)
+library(TOSTER)
 
 ```
 
@@ -289,11 +291,22 @@ print(south_stats)
 cohen.ES(test = "t", size = "small") 
 
 # The code to perform the power analysis 
-# I chose the small effect size because I would be happy to find any effect. The significance level of .5 was used because that is what most studies in psychology use. I made the power .9 because it is recommended in psychological research
-pwr.t.test(d=.2, sig.level = .5, power = .9)
+# I chose the small effect size because I would be happy to find any effect. The significance level of .5 was used because that is what most studies in psychology use. I made the power .8 - might change this later.
+pwr.t.test(d=.2, sig.level = .05, power = .8)
 
 ```
 
+## Question 9) Equivalence Testing
+
+```{r}
+#| label: Estimating if I can detect no effect
+# This is the code I will use to determine if there is a difference between groups. I am ensuring that I have enough power to confirm if there truly is no difference between the groups
+
+powerTOSTtwo(alpha=.05, statistical_power = .8, low_eqbound_d= -.2, high_eqbound_d=.2)
+
+# I chose to use the low_eqbound of -.2 because the range should be symmetrical and since the we are not interested in anything less than .2 this is a good value to use. 
+
+```
 
 
 
