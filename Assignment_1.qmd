@@ -247,6 +247,24 @@ print(south_stats)
 ## Question 6) Secondary Analysis
 
 ```{r}
+#| label: Justification for Required Sample
+# The question requires me to provide two justifications for how you might 
+# estimate the required sample for this study before you analyze the data. 
+# Explain briefly your choice
+
+## Here are the options I could chose from:
+
+# Measure the entire population: A researcher can specify the entire population, it is finite, and it is possible to measure (almost) every entity in the population.
+
+# Resource constraints: Limited resources are the primary reason for the choice of the sample size a researcher can collect.
+
+# Accuracy: The research question focuses on the size of a parameter, and a researcher collects sufficient data to have an estimate with a desired level of accuracy.
+
+# A-priori power analysis: The research question aims to test whether certain effect sizes can be statistically rejected with a desired statistical power.
+
+# Heuristics: A researcher decides upon the sample size based on a heuristic, general rule or norm that is described in the literature or communicated orally.
+
+# No justification: A researcher has no reason to choose a specific sample size or does not have a clearly specified inferential goal and wants to communicate this honestly.
 
 ```
 
