@@ -170,6 +170,49 @@ print(south_stats)
 
 ```
 
+## Question 4) Efficacy and Kills
 
+```{r}
+#| label: Most effective battle field and most kills
+# This section will not run any code but is instead used to help me keep track 
+# of my code better and I include the summary stats that I have calculated above 
+# to make it easier for me to reference back to later when writing my report.
 
+#########
+##### NORTH STATS
+#########
+# mean_CombatEffectiveness = 499.7815
+# sd_CombatEffectiveness = 174.0656
+# min_CombatEffectiveness = 130.68
+# max_CombatEffectiveness = 897.06
+
+# mean_injuries = 4.60274
+# sd_injuries = 0.6819035
+# min_injuries = 2
+# max_injuries = 5
+
+# mean_kills = 1.712329
+# sd_kills = 4.565813
+# min_kills = 0
+# max_kills = 34
+
+#########
+##### SOUTH STATS
+#########
+# mean_CombatEffectiveness = 491.6771
+# sd_CombatEffectiveness = 189.5299
+# min_CombatEffectiveness = 67.25
+# max_CombatEffectiveness = 946.89
+
+# mean_injuries = 4.428571
+# sd_injuries = 0.8789123
+# min_injuries = 2
+# max_injuries = 5
+
+# mean_kills = 4.75
+# sd_kills = 14.9929
+# min_kills = 0
+# max_kills = 79
+
+```
 
