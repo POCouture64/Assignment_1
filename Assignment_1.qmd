@@ -83,14 +83,14 @@ write_csv(avengers_CSV, "avengers_no_super_dead.csv")
 
 ```{r}
 #| label: Summarizing the data for Combat Effectiveness
+
 # This is the code I will use to understand the properties of combat 
 # effectiveness, kills, and injuries. This will present the mean, sd,  # and range values for those variables.
 
 # This is the code for 'CombatEffectiveness' 
-summarise(avengers,avg_CombatEffectiveness = mean(CombatEffectiveness,na.rm=TRUE))
-summarise(avengers,sd_CombatEffectiveness = sd(CombatEffectiveness,na.rm=TRUE))
+summarise(avengers,avg_CE = mean(CombatEffectiveness,na.rm=TRUE))
+summarise(avengers,sd_CE = sd(CombatEffectiveness,na.rm=TRUE))
 range(avengers$CombatEffectiveness, na.rm = TRUE)
-
 ```
 
 ```{r}
@@ -141,7 +141,6 @@ print(north_stats)
 
 ```
 
-
 ```{r}
 #| label:  Mean/sd and range for South
 # Here is the code I used to separate the data into those from the North and
@@ -174,6 +173,8 @@ print(south_stats)
 
 ```{r}
 #| label: Most effective battle field and most kills
+#| eval: false
+#| include: false
 # This section will not run any code but is instead used to help me keep track 
 # of my code better and I include the summary stats that I have calculated above 
 # to make it easier for me to reference back to later when writing my report.
@@ -215,4 +216,43 @@ print(south_stats)
 # max_kills = 79
 
 ```
+
+## Question 5) Most erroneous variables
+
+```{r}
+#| label: Most erroneous variable between combat effectiveness, kills, and injuries
+# Same thing as Q4, this will not run code and will allow me to compare the 
+# stats from the 3 variables. I will use the sd to determine how erroneous the 
+# variables are as well as the range of values. This will not look at north vs
+# south and will use it based on the total sample calculation made in Q3c.
+
+############## STATS
+#### CE
+# avg = 982.1511
+# sd = 10,494.71
+# min / max = 67.25 / 300,000
+
+#### Kills
+# avg = 3.833744
+# sd = 10.78843
+# min / max = 0 / 176
+
+#### Injuries
+# avg = 3.488916
+# sd = 1.262618
+# min / max = 0 / 5
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
 
