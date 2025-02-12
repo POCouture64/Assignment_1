@@ -23,6 +23,7 @@ library(readr)
 library(haven)
 library(pwr)
 library(TOSTER)
+library(effectsize)
 
 ```
 
@@ -305,6 +306,24 @@ pwr.t.test(d=.2, sig.level = .05, power = .8)
 powerTOSTtwo(alpha=.05, statistical_power = .8, low_eqbound_d= -.2, high_eqbound_d=.2)
 
 # I chose to use the low_eqbound of -.2 because the range should be symmetrical and since the we are not interested in anything less than .2 this is a good value to use. 
+
+```
+
+## Question 10) Effect size and 95% CI
+
+```{r}
+#| label: Calculating the Effect Size and 95% CI
+# This is the code I will use to determine the size of each group
+
+YES <- sum(avengers$superpower == "yes", na.rm = TRUE)
+NO <- sum(avengers$superpower == "no", na.rm = TRUE)
+
+# t-crit = 4.25
+# Here is the code I used to calculate the relevant effect size which includes the 95% CI. 
+# State and explain whether the estimate is precise or not and give the effect a qualitative label using Cohen’s conventions. 
+t <- 4.25
+n1 <- YES
+n2 <- NO
 
 ```
 
