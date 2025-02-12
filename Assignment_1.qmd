@@ -244,6 +244,11 @@ print(south_stats)
 
 ```
 
+## Question 6) Secondary Analysis
+
+```{r}
+
+```
 
 
 
