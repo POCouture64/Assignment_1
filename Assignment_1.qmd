@@ -16,9 +16,11 @@ This is all my code and explanation for Assignment 1 in PSYR 6003 Fundamental of
 # This is the code for installing all the libraries I require for this code and then once it is installed, I call it back (make sure R knows to use it) 
 
 installed.packages("tidyverse")
+install.packages("pwr")
 library(tidyverse)
 library(readr)
 library(haven)
+library(pwr)
 
 ```
 
@@ -274,6 +276,21 @@ print(south_stats)
 #| label: Hypothetical Effect Size 
 # Choose a hypothetical effect size that you might be looking for here. The exact size of the effect does not matter (you can decide and state it), but you must justify how you might choose that estimated effect size if this were a real study 
 # Chose something that is reasonable. I will look for a small effect size Cohen's d= .2
+
+```
+
+## Question 8) Power Analysis
+
+```{r}
+#| label: Power Analysis
+# Here is the code I will use for the power analysis
+
+# The code to find what size effect I was to see and it will provide me with the appropriate d value. in my case, d = .2. 
+cohen.ES(test = "t", size = "small") 
+
+# The code to perform the power analysis 
+# I chose the small effect size because I would be happy to find any effect. The significance level of .5 was used because that is what most studies in psychology use. I made the power .9 because it is recommended in psychological research
+pwr.t.test(d=.2, sig.level = .5, power = .9)
 
 ```
 
