@@ -55,7 +55,7 @@ print(avengers)
 # will only include the avengers who did not have a superpower and have died. 
 
 avengers_SPSS <- avengers %>%
-  filter(superpower == FALSE, died == "Yes")
+  filter(superpower == "no", died == "yes")
 
 # The following code will save the code for to an SPSS format
 
@@ -71,7 +71,7 @@ write_sav(avengers_SPSS, "avengers_no_super_dead.SPSS")
 # will only include the avengers who did not have a superpower and have died.
 
 avengers_CSV <- avengers %>%
-  filter(superpower == FALSE, died == "Yes")
+  filter(superpower == "no", died == "yes")
 
 # The following code will save the code for to a CSV format
 
@@ -93,7 +93,6 @@ range(avengers$CombatEffectiveness, na.rm = TRUE)
 
 ```
 
-
 ```{r}
 #| label: Summarizing the data for kills
 
@@ -102,7 +101,6 @@ summarise(avengers,avg_kills = mean(kills,na.rm=TRUE))
 summarise(avengers,sd_kills = sd(kills,na.rm=TRUE))
 range(avengers$kills, na.rm = TRUE)
 ```
-
 
 ```{r}
 #| label: Summarizing the data for injuries
@@ -113,16 +111,65 @@ summarise(avengers,sd_injuries = sd(injuries,na.rm=TRUE))
 range(avengers$injuries, na.rm = TRUE)
 ```
 
-
-## Question 3d)
+## Question 3d) Dividing the North and South 
 
 ```{r}
+#| label:  Mean/sd and range for North
+# Here is the code I used to separate the data into those from the North and
+# South battlefield. 
+
+north_stats <- avengers_CSV %>%
+  filter(north_south == "north") %>%
+  summarise(
+    mean_CombatEffectiveness = mean(CombatEffectiveness, na.rm = TRUE),
+    sd_CombatEffectiveness = sd(CombatEffectiveness, na.rm = TRUE),
+    min_CombatEffectiveness = min(CombatEffectiveness, na.rm = TRUE),
+    max_CombatEffectiveness = max(CombatEffectiveness, na.rm = TRUE),
+    
+    mean_injuries = mean(injuries, na.rm = TRUE),
+    sd_injuries = sd(injuries, na.rm = TRUE),
+    min_injuries = min(injuries, na.rm = TRUE),
+    max_injuries = max(injuries, na.rm = TRUE),
+    
+    mean_kills = mean(kills, na.rm = TRUE),
+    sd_kills = sd(kills, na.rm = TRUE),
+    min_kills = min(kills, na.rm = TRUE),
+    max_kills = max(kills, na.rm = TRUE)
+  )
+
+print(north_stats)
 
 ```
-=======
+
+
+```{r}
+#| label:  Mean/sd and range for South
+# Here is the code I used to separate the data into those from the North and
+# South battlefield. 
+
+south_stats <- avengers_CSV %>%
+  filter(north_south == "south") %>%
+  summarise(
+    mean_CombatEffectiveness = mean(CombatEffectiveness, na.rm = TRUE),
+    sd_CombatEffectiveness = sd(CombatEffectiveness, na.rm = TRUE),
+    min_CombatEffectiveness = min(CombatEffectiveness, na.rm = TRUE),
+    max_CombatEffectiveness = max(CombatEffectiveness, na.rm = TRUE),
+    
+    mean_injuries = mean(injuries, na.rm = TRUE),
+    sd_injuries = sd(injuries, na.rm = TRUE),
+    min_injuries = min(injuries, na.rm = TRUE),
+    max_injuries = max(injuries, na.rm = TRUE),
+    
+    mean_kills = mean(kills, na.rm = TRUE),
+    sd_kills = sd(kills, na.rm = TRUE),
+    min_kills = min(kills, na.rm = TRUE),
+    max_kills = max(kills, na.rm = TRUE)
+  )
+
+print(south_stats)
+
+```
 
 
 
 
-
-The `echo: false` option disables the printing of code (only output is displayed).
