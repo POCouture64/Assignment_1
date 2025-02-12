@@ -268,7 +268,14 @@ print(south_stats)
 
 ```
 
+## Question 7) Choosing Effect Size
 
+```{r}
+#| label: Hypothetical Effect Size 
+# Choose a hypothetical effect size that you might be looking for here. The exact size of the effect does not matter (you can decide and state it), but you must justify how you might choose that estimated effect size if this were a real study 
+# Chose something that is reasonable. I will look for a small effect size Cohen's d= .2
+
+```
 
 
 
