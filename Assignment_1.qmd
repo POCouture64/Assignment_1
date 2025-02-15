@@ -93,17 +93,17 @@ write_csv(avengers_CSV, "avengers_no_super_dead.csv")
 # effectiveness, kills, and injuries. This will present the mean, sd,  # and range values for those variables.
 
 # This is the code for 'CombatEffectiveness' 
-summarise(avengers,avg_CE = mean(CombatEffectiveness,na.rm=TRUE)) %>% print(digits = 10)
-summarise(avengers,sd_CE = sd(CombatEffectiveness,na.rm=TRUE)) %>% print(digits = 10)
-range(avengers$CombatEffectiveness, na.rm = TRUE) %>% print(digits = 10)
+summarise(avengers,avg_CE = mean(CombatEffectiveness,na.rm=TRUE))
+summarise(avengers,sd_CE = sd(CombatEffectiveness,na.rm=TRUE))
+range(avengers$CombatEffectiveness, na.rm = TRUE) 
 ```
 
 ```{r}
 #| label: Summarizing the data for kills
 
 # This is the code for 'kills'
-summarise(avengers,avg_kills = mean(kills,na.rm=TRUE)) %>% print(digits = 10)
-summarise(avengers,sd_kills = sd(kills,na.rm=TRUE)) %>% print(digits = 10)
+summarise(avengers,avg_kills = mean(kills,na.rm=TRUE))
+summarise(avengers,sd_kills = sd(kills,na.rm=TRUE)) 
 range(avengers$kills, na.rm = TRUE)
 ```
 
@@ -111,8 +111,8 @@ range(avengers$kills, na.rm = TRUE)
 #| label: Summarizing the data for injuries
 
 # This is the code for 'injuries'
-summarise(avengers,avg_injuries = mean(injuries,na.rm=TRUE)) %>% print(digits = 10)
-summarise(avengers,sd_injuries = sd(injuries,na.rm=TRUE)) %>% print(digits = 10)
+summarise(avengers,avg_injuries = mean(injuries,na.rm=TRUE)) 
+summarise(avengers,sd_injuries = sd(injuries,na.rm=TRUE)) 
 range(avengers$injuries, na.rm = TRUE)
 ```
 
@@ -142,7 +142,7 @@ north_stats <- avengers_CSV %>%
     max_kills = max(kills, na.rm = TRUE)
   )
 
-print(north_stats, digits = 10)
+print(north_stats)
 
 ```
 
@@ -170,7 +170,7 @@ south_stats <- avengers_CSV %>%
     max_kills = max(kills, na.rm = TRUE)
   )
 
-print(south_stats, digits = 10)
+print(south_stats)
 
 ```
 
@@ -293,7 +293,7 @@ cohen.ES(test = "t", size = "small")
 
 # The code to perform the power analysis 
 # I chose the small effect size because I would be happy to find any effect. The significance level of .5 was used because that is what most studies in psychology use. I made the power .8 - might change this later.
-pwr.t.test(d=.2, sig.level = .05, power = .8) %>% print(digits = 10)
+pwr.t.test(d=.2, sig.level = .05, power = .8)
 
 ```
 
@@ -303,7 +303,7 @@ pwr.t.test(d=.2, sig.level = .05, power = .8) %>% print(digits = 10)
 #| label: Estimating if I can detect no effect
 # This is the code I will use to determine if there is a difference between groups. I am ensuring that I have enough power to confirm if there truly is no difference between the groups
 
-powerTOSTtwo(alpha=.05, statistical_power = .8, low_eqbound_d= -.2, high_eqbound_d=.2) %>% print(digits = 10)
+powerTOSTtwo(alpha=.05, statistical_power = .8, low_eqbound_d= -.2, high_eqbound_d=.2)
 
 # I chose to use the low_eqbound of -.2 because the range should be symmetrical and since the we are not interested in anything less than .2 this is a good value to use. 
 
