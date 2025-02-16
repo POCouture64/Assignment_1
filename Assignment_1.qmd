@@ -89,6 +89,11 @@ write_csv(avengers_CSV, "avengers_no_super_dead.csv")
 ```{r}
 #| label: Summarizing the data for Combat Effectiveness
 
+avengers <- avengers %>%
+  filter(!is.na(CombatEffectiveness) & !is.na(injuries) & !is.na(kills))
+
+nrow(avengers)
+
 # This is the code I will use to understand the properties of combat 
 # effectiveness, kills, and injuries. This will present the mean, sd,  # and range values for those variables.
 
@@ -96,6 +101,7 @@ write_csv(avengers_CSV, "avengers_no_super_dead.csv")
 summarise(avengers,avg_CE = mean(CombatEffectiveness,na.rm=TRUE))
 summarise(avengers,sd_CE = sd(CombatEffectiveness,na.rm=TRUE))
 range(avengers$CombatEffectiveness, na.rm = TRUE) 
+
 ```
 
 ```{r}
@@ -123,7 +129,7 @@ range(avengers$injuries, na.rm = TRUE)
 # Here is the code I used to separate the data into those from the North and
 # South battlefield. 
 
-north_stats <- avengers_CSV %>%
+north_stats <- avengers %>%
   filter(north_south == "north") %>%
   summarise(
     mean_CombatEffectiveness = mean(CombatEffectiveness, na.rm = TRUE),
@@ -151,7 +157,7 @@ print(north_stats)
 # Here is the code I used to separate the data into those from the North and
 # South battlefield. 
 
-south_stats <- avengers_CSV %>%
+south_stats <- avengers %>%
   filter(north_south == "south") %>%
   summarise(
     mean_CombatEffectiveness = mean(CombatEffectiveness, na.rm = TRUE),
@@ -337,5 +343,7 @@ NO <- sum(avengers$superpower == "no", na.rm = TRUE)
 t <- 4.25
 n1 <- YES
 n2 <- NO
+
+t_to_d(t, df_error = n1+n2-2, paired = FALSE)
 
 ```
