@@ -187,44 +187,7 @@ print(south_stats)
 #| eval: false
 #| include: false
 # This section will not run any code but is instead used to help me keep track 
-# of my code better and I include the summary stats that I have calculated above 
-# to make it easier for me to reference back to later when writing my report.
-
-#########
-##### NORTH STATS
-#########
-# mean_CombatEffectiveness = 499.7815
-# sd_CombatEffectiveness = 174.0656
-# min_CombatEffectiveness = 130.68
-# max_CombatEffectiveness = 897.06
-
-# mean_injuries = 4.60274
-# sd_injuries = 0.6819035
-# min_injuries = 2
-# max_injuries = 5
-
-# mean_kills = 1.712329
-# sd_kills = 4.565813
-# min_kills = 0
-# max_kills = 34
-
-#########
-##### SOUTH STATS
-#########
-# mean_CombatEffectiveness = 491.6771
-# sd_CombatEffectiveness = 189.5299
-# min_CombatEffectiveness = 67.25
-# max_CombatEffectiveness = 946.89
-
-# mean_injuries = 4.428571
-# sd_injuries = 0.8789123
-# min_injuries = 2
-# max_injuries = 5
-
-# mean_kills = 4.75
-# sd_kills = 14.9929
-# min_kills = 0
-# max_kills = 79
+# of my code.
 
 ```
 
@@ -232,26 +195,7 @@ print(south_stats)
 
 ```{r}
 #| label: Most erroneous variable between combat effectiveness, kills, and injuries
-# Same thing as Q4, this will not run code and will allow me to compare the 
-# stats from the 3 variables. I will use the sd to determine how erroneous the 
-# variables are as well as the range of values. This will not look at north vs
-# south and will use it based on the total sample calculation made in Q3c.
-
-############## STATS
-#### CE
-# avg = 982.1511
-# sd = 10,494.71
-# min / max = 67.25 / 300,000
-
-#### Kills
-# avg = 3.833744
-# sd = 10.78843
-# min / max = 0 / 176
-
-#### Injuries
-# avg = 3.488916
-# sd = 1.262618
-# min / max = 0 / 5
+# Same thing as Q4, this will not run code.
 
 ```
 
@@ -311,7 +255,7 @@ print(south_stats)
 cohen.ES(test = "t", size = "small") 
 
 # The code to perform the power analysis 
-# I chose the small effect size because I would be happy to find any effect. The significance level of .5 was used because that is what most studies in psychology use. I made the power .8 - might change this later.
+# I chose the small effect size because I would be happy to find any effect. The significance level of .5 was used because that is what most studies in psychology use. I made the power .8
 pwr.t.test(d=.2, sig.level = .05, power = .8)
 
 ```
